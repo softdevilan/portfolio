@@ -50,7 +50,7 @@ button {
 .card:hover { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15)); }
 
 .fixed-height {
-    height: 300px; /* Ajusta este valor según tus necesidades */
+    height: 300px; 
     overflow: hidden;
 }
 

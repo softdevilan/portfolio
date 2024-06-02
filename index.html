@@ -47,8 +47,7 @@
             </a>
             <a href="#" class="text-decoration-none fs-5" id="mobileMenuButton" onclick="toggleMobileMenu()">{ }</a>
         </div>
-        <div id="mobileMenu" class="d-none position-absolute top-100 start-0 w-100 text-center text-white p-4"
-            style="background-color: rgba(60, 60, 60, 0.01); backdrop-filter: blur(10px);">
+        <div id="mobileMenu" class="bg-black d-none position-absolute top-100 start-0 w-100 text-center text-white p-4">
             <a class="nav-link fs-5 d-block py-3" href="#about">About</a>
             <a class="nav-link fs-5 d-block py-3" href="#skills">Skills</a>
             <a class="nav-link fs-5 d-block py-3" href="#projects">Projects</a>
@@ -101,7 +100,7 @@
         <script>
             document.addEventListener('DOMContentLoaded', (event) => {
                 var options = {
-                    strings: ["<h1 class='fs-1 pt-3 pb-1 fw-bold'> <div class='pb-2' style='font-size: 10vh !important;'> Hello, </div> <div class='fw-bold'> my name is <span class='fw-light'>{ </span>Angel Ilai<span class='fw-light'> } </span></div></h1>"],
+                    strings: ["<h1 class='fs-1 fs-sm-4 pt-3 pb-1 fw-bold'> <div class='pb-2' style='font-size: 10vh;'> Hello, </div> <div class='fw-bold text-nowrap'> my name is <span class='fw-light'>{ </span>Angel Ilai<span class='fw-light'> } </span></div></h1>"],
                     typeSpeed: 60
                 };
                 var typed = new Typed("#typed-output", options);
@@ -541,7 +540,7 @@
                     </form>
                 </div>
 
-                <p class="fs-6 fw-lighter text-justify">
+                <p class="fs-6 mt-4 fw-lighter text-justify">
                     Note that you can also contact me via <span class="fw-bold ps-1"><a
                             href="https://www.linkedin.com/in/angelilaialcaniz"><i class="fa-brands fa-linkedin"></i>
                             LinkedIn</a></span>.
