@@ -1,0 +1,87 @@
+body {
+    background-color: #121212;
+    /* Negro muy oscuro */
+    color: #ffffff;
+    /* Blanco para el texto */
+}
+
+a { color: #ffffff; text-decoration: none; }
+
+button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.logo {
+    transition: transform 0.25s ease-in-out;
+}
+
+.logo:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    width: 100%;
+    height: 2px;
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    background-color: yellow; 
+    transform: scaleX(0);
+    transition: transform 0.3s ease; 
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+#skills button { transition: all 0.2s ease-in-out; }
+
+#skills button:hover { cursor: help; transform: translateY(-2.5px);}
+
+.card { transition: all 0.2s ease-in-out; }
+
+.card:hover { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15)); }
+
+.fixed-height {
+    height: 300px; /* Ajusta este valor según tus necesidades */
+    overflow: hidden;
+}
+
+.fixed-height .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-img-top {
+    object-fit: cover; /* La imagen cubrirá el contenedor manteniendo su relación de aspecto */
+    height: 200px; /* Altura fija para todas las imágenes */
+}
+
+.card-text.short-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card-text.short-text::after {
+    content: '...';
+}
+
+.toggle-button {
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+#typed-output {
+    display: inline-block;
+    font-size: 9vh !important;
+}
+
+
