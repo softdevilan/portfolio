@@ -2,140 +2,147 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>softdevilan | Software Developer</title>
+
+    <title>Softdevilan | Software Developer</title>
     <link rel="icon" href="media/img/favicon.ico" type="image/x-icon">
+ 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos propios -->
     <link href="css/styles.css" rel="stylesheet">
+    <!-- Iconos -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e14e97ecd4.js" crossorigin="anonymous"></script>
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body class="bg-black min-vh-100 d-flex flex-column">
 
+    <!-- HEADER -->
     <header class="px-4 py-3 border-bottom d-none d-lg-block">
+
         <div class="container-fluid d-flex justify-content-between align-items-center">
+
             <a class="d-flex align-items-center col-3" href="#contact">
                 <img src="media/img/softdevilan-logo.png" alt="Softdevilan Logo" width="100" height="100" class="logo">
             </a>
+
             <h1 class="text-center mx-auto mb-0 fs-2 flex-grow-1 text-uppercase"
-                style="font-family: 'Silkscreen', sans-serif;">&lt; Developer Portfolio /&gt;</h1>
+                style="font-family: 'Silkscreen', sans-serif;">&lt; Developer Portfolio /&gt;
+            </h1>
+
             <nav class="d-flex gap-4">
+
                 <a class="nav-link fs-5">{</a>
                 <a class="nav-link fs-5" href="#about">About</a>
                 <a class="nav-link fs-5" href="#skills">Skills</a>
                 <a class="nav-link fs-5" href="#projects">Projects</a>
                 <a class="nav-link fs-5" href="#contact">Contact</a>
                 <a class="nav-link fs-5">}</a>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Menú desplegable para dispositivos móviles -->
-    <div class="d-lg-none position-relative">
+            </nav>
+
+        </div>
+
+    </header>
+    
+    <div class="d-lg-none position-relative"> <!-- Menú desplegable para móvil -->
+
         <div class="px-4 py-3 border-bottom d-flex justify-content-between align-items-center">
+
             <a class="d-flex align-items-center" href="index.html">
                 <img src="media/img/softdevilan-logo.png" alt="Softdevilan Logo" width="80" height="80">
             </a>
+
             <a href="#" class="text-decoration-none fs-5" id="mobileMenuButton" onclick="toggleMobileMenu()">{ }</a>
+
         </div>
+
         <div id="mobileMenu" class="bg-black d-none position-absolute top-100 start-0 w-100 text-center text-white p-4">
+            
             <a class="nav-link fs-5 d-block py-3" href="#about">About</a>
             <a class="nav-link fs-5 d-block py-3" href="#skills">Skills</a>
             <a class="nav-link fs-5 d-block py-3" href="#projects">Projects</a>
             <a class=" nav-link fs-5 d-block py-3" href="#contact">Contact</a>
+
         </div>
+
     </div>
 
-    <!-- Script para el header móvil -->
-    <script>
-        function toggleMobileMenu() {
-            var menu = document.getElementById('mobileMenu');
-            if (menu.classList.contains('d-none')) {
-                menu.classList.remove('d-none');
-            } else {
-                menu.classList.add('d-none');
-            }
-        }
-    </script>
-
-
+    <!-- MAIN -->
     <main class="flex-grow-1 px-6 py-12 my-4 container">
 
-        <section id="hero"
-            class="my-5 py-5 mx-5 d-flex flex-column align-items-center justify-content-center text-center gap-1">
+        <section id="hero" class="my-5 py-5 mx-5 d-flex flex-column align-items-center justify-content-center text-center gap-1">
 
             <!-- Hello -->
             <h1 class="fs-1 pt-3 pb-1 fw-bold">
                 <div id="typed-output"></div>
             </h1>
+
             <h2 class="fs-4 py-1">
                 A junior software developer with a passion for learning and building cool stuff.
             </h2>
+
             <div class="d-flex gap-4">
+
                 <div class="icono-github btn btn-dark">
                     <a class="text-decoration-none" href="https://github.com/softdevilan" target="_blank">
-                        <i class="bi bi-github"></i>
-                        GitHub
+                        <i class="bi bi-github"></i> GitHub
                     </a>
                 </div>
+
                 <div class="icono-linkedin btn btn-dark">
                     <a class="text-decoration-none" href="https://www.linkedin.com/in/angelilaialcaniz" target="_blank">
-                        <i class="bi bi-linkedin"></i>
-                        LinkedIn
+                        <i class="bi bi-linkedin"></i> LinkedIn
                     </a>
                 </div>
-            </div>
-        </section>
 
-        <!-- Script efecto escribir -->
-        <script>
-            document.addEventListener('DOMContentLoaded', (event) => {
-                var options = {
-                    strings: ["<h1 class='fs-1 fs-sm-4 pt-3 pb-1 fw-bold'> <div class='pb-2' style='font-size: 10vh;'> Hello, </div> <div class='fw-bold text-nowrap'> my name is <span class='fw-light'>{ </span>Angel Ilai<span class='fw-light'> } </span></div></h1>"],
-                    typeSpeed: 60
-                };
-                var typed = new Typed("#typed-output", options);
-            });
-        </script>
+            </div>
+
+        </section>
 
         <section class="row justify-content-center mt-5">
 
             <!-- About me -->
             <article id="about" class="col-12 col-lg-10 mb-5">
+
                 <h2 class="fs-2 py-3 fw-bold">About me <span class="fs-5 fw-light"> ~$: whoami</span></h2>
+
                 <p class="fs-5 fw-lighter text-center">
-                    I'm a student of <b>Multiplatform Software Development</b>, advanced level vocational training, with a
-                    strong
-                    passion for <b>technology</b> and a keen interest in the
-                    latest trends and <b>innovations in the industry</b>.
-                    Although I don't have much professional experience
-                    yet, I've been honing my skills through <b>personal and academic projects</b>, online courses and <b>&lt; coding
-                    challenges &gt;</b>.
+                    I'm a student of <b>Multiplatform Software Development</b>, advanced level vocational training, 
+                    with a strong passion for <b>technology</b> and a keen interest in the latest trends 
+                    and <b>innovations in the industry</b>.
+                    Although I don't have much professional experience yet, I've been honing my skills through 
+                    <b>personal and academic projects</b>, online courses and <b>&lt; coding challenges &gt;</b>.
                 </p>
+
                 <p class="fs-5 fw-lighter text-center">
                     In my free time, you can find me tinkering with new technologies, reading tech blogs and books, or
-                    participating in coding challenges such as <b>Hackatons or Codethons</b>. I'm always eager to learn and
-                    <b>grow</b>, and I'm excited to
-                    bring my <b>enthusiasm</b> and <b>dedication</b> to a <b>dynamic team</b>.
+                    participating in coding challenges such as <b>Hackatons or Codethons</b>. I'm always eager to learn 
+                    and <b>grow</b>, and I'm excited to bring my <b>enthusiasm</b> and <b>dedication</b> 
+                    to a <b>dynamic team</b>.
                 </p>
+
             </article>
 
             <!-- Skills -->
             <article id="skills" class=" col-12 col-lg-10 mb-5">
+
                 <h2 class="fs-2 py-3 fw-bold">Skills <span class="fs-5 fw-light"> ~$: dpkg -l</span></h2>
+
                 <p class="fs-5 fw-lighter text-center">
                     As part of my programming journey, I have acquired quite a few tech skills. These are some of them*:
                 </p>
+
                 <div class="row g-4">
+
                     <!-- Linux -->
                     <div class="col-xl-3 col-md-3 col-6 d-flex justify-content-center">
                         <button type="button"
@@ -146,6 +153,7 @@
                             <p class="fs-4 my-0 mt-2 fw-lighter">Linux</p>
                         </button>
                     </div>
+
                     <!-- Python -->
                     <div class="col-xl-3 col-md-3 col-6 d-flex justify-content-center">
                         <button type="button"
@@ -156,6 +164,7 @@
                             <p class="fs-4 my-0 mt-2 fw-lighter">Python</p>
                         </button>
                     </div>
+
                     <!-- Java -->
                     <div class="col-xl-3 col-md-3 col-6 d-flex justify-content-center">
                         <button type="button"
@@ -166,6 +175,7 @@
                             <p class="fs-4 my-0 mt-2 fw-lighter">Java</p>
                         </button>
                     </div>
+
                     <!-- Angular -->
                     <div class="col-xl-3 col-md-3 col-6 d-flex justify-content-center">
                         <button type="button"
@@ -176,6 +186,7 @@
                             <p class="fs-4 my-0 mt-2 fw-lighter">Angular</p>
                         </button>
                     </div>
+
                     <!-- SQL -->
                     <div class="col-xl-3 col-md-3 col-6 d-flex justify-content-center">
                         <button type="button"
@@ -186,6 +197,7 @@
                             <p class="fs-4 my-0 mt-2 fw-lighter">SQL</p>
                         </button>
                     </div>
+
                     <!-- Unity -->
                     <div class="col-xl-3 col-md-3 col-6 d-flex justify-content-center">
                         <button type="button"
@@ -196,6 +208,7 @@
                             <p class="fs-4 my-0 mt-2 fw-lighter">Unity</p>
                         </button>
                     </div>
+
                     <!-- Netbeans -->
                     <div class="col-xl-3 col-md-3 col-6 d-flex justify-content-center">
                         <button type="button"
@@ -206,6 +219,7 @@
                             <p class="fs-4 my-0 mt-2 fw-lighter">Netbeans</p>
                         </button>
                     </div>
+
                     <!-- Scrum -->
                     <div class="col-xl-3 col-md-3 col-6 d-flex justify-content-center">
                         <button type="button"
@@ -216,34 +230,32 @@
                             <p class="fs-4 my-0 mt-2 fw-lighter">Scrum</p>
                         </button>
                     </div>
+
                 </div>
 
                 <p class="fs-6 mt-4 fw-lighter text-justify">
+
                     * It's important to highlight that, in the vast world of technology, we programmers are constantly
                     evolving,
                     learning and reinventing ourselves. Therefore, these are just a glimpse into the [ array ] of
                     technologies I've
                     <del>battled</del> <i> worked</i> with during my journey.
-                </p>
-                <p class="fs-5 fw-lighter text-justify">
-                    For a deeper, up-to-date dive into my tech stack, feel free to connect with me
-                    on <span class="fw-bold"><a href="https://www.linkedin.com/in/angelilaialcaniz"><i
-                                class="fa-brands fa-linkedin"></i> LinkedIn</a></span>.
+
                 </p>
 
-                <!-- Scripts para los tooltips -->
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-                        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                            return new bootstrap.Tooltip(tooltipTriggerEl);
-                        });
-                    });
-                </script>
+                <p class="fs-5 fw-lighter text-justify">
+
+                    For a deeper, up-to-date dive into my tech stack, feel free to connect with me
+                    on <span class="fw-bold"><a href="https://www.linkedin.com/in/angelilaialcaniz">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn</a></span>.
+
+                </p>
+
             </article>
 
             <!-- Projects -->
             <article id="projects" class="col-12 col-lg-10 mb-1 pb-5 border-bottom">
+
                 <h2 class="fs-2 py-3 fw-bold">Projects <span class="fs-5 fw-light">~$: git log</span></h2>
 
                 <p class="fs-5 fw-lighter text-justify">
@@ -275,14 +287,16 @@
                     They are not perfect; neither am I. All of the mistakes I made while working on them – and the
                     future ones I'll make –
                     were and will be the key factors to make me a better developer.
-
                 </p>
 
                 <div class="row g-4">
+
                     <!-- Game Over -->
                     <div class="col-md-6">
                         <div class="card bg-dark text-white">
+
                             <div id="carouselGameOver" class="carousel slide">
+
                                 <div class="carousel-inner fixed-height">
                                     <div class="carousel-item active">
                                         <img src="media/img/game-store.png" class="d-block w-100" alt="Game Over">
@@ -290,8 +304,8 @@
                                     <div class="carousel-item">
                                         <img src="media/img/game-store-2.png" class="d-block w-100" alt="Game Over">
                                     </div>
-                                    <!-- Añade más imágenes aquí si es necesario -->
                                 </div>
+
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselGameOver"
                                     data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -302,18 +316,24 @@
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
+
                             </div>
+
                             <div class="card-body d-flex flex-column">
+
                                 <h5 class="card-title">Game Over <i class="fa fa-brands fa-html5 px-2"></i></h5>
+
                                 <p class="card-text short-text">
-                                    'Game Over' is a conceptual online videogame store I developed
-                                    as a School Project for <span class="fw-bold"><a href="https://aulacampus.com"
-                                            target="_blank">Aula Campus</a></span>, the educational
-                                    institution where I am currently a student. It is a minimalist style website
+                                    'Game Over' is a conceptual online videogame store I developed as a School Project for 
+                                    <span class="fw-bold"><a href="https://aulacampus.com" target="_blank">Aula Campus</a></span>, 
+                                    the educational institution where I am currently a student. It is a minimalist style website
                                     developed merely with HTML5 and CSS.
                                 </p>
+
                                 <div class="mt-auto d-flex flex-column">
+
                                     <button class="btn btn-link text-white p-0 ms-auto toggle-button">Show more</button>
+
                                     <div class="mt-2">
                                         <a href="https://github.com/softdevilan" target="_blank"
                                             class="btn btn-outline-light me-2">
@@ -324,15 +344,20 @@
                                             <i class="bi bi-box-arrow-up-right"></i> Go to page
                                         </a>
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
                     </div>
 
                     <!-- HowToVLC -->
                     <div class="col-md-6">
                         <div class="card bg-dark text-white">
+
                             <div id="carouselHowToVLC" class="carousel slide">
+
                                 <div class="carousel-inner fixed-height">
                                     <div class="carousel-item active">
                                         <img src="media/img/how-to-vlc.png" class="d-block w-100" alt="How to VLC">
@@ -340,8 +365,8 @@
                                     <div class="carousel-item">
                                         <img src="media/img/how-to-vlc-2.png" class="d-block w-100" alt="How to VLC">
                                     </div>
-                                    <!-- Añade más imágenes aquí si es necesario -->
                                 </div>
+
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselHowToVLC"
                                     data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -352,17 +377,23 @@
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
+
                             </div>
+
                             <div class="card-body d-flex flex-column">
+
                                 <h5 class="card-title">How to VLC <i class="fa fa-brands fa-angular px-2"></i></h5>
+
                                 <p class="card-text short-text">
-                                    This project was developed by my and my team for the Codethon I, a coding challenge
-                                    organized by <span class="fw-bold"><a href="https://artemisclub.es"
-                                            target="_blank">Artemis Club</a></span>
+
+                                    This project was developed by my and my team for the Codethon I, a coding challenge organized by 
+                                    <span class="fw-bold"><a href="https://artemisclub.es" target="_blank">Artemis Club</a></span>
                                     at the prestigious Spain's leading technological university
-                                    <span class="fw-bold"><a href="https://www.upv.es/index-en.html" target="_blank">UPV
-                                            (Universitat Politècnica de València)</a></span>
+                                    <span class="fw-bold"><a href="https://www.upv.es/index-en.html" target="_blank">
+                                    UPV (Universitat Politècnica de València)</a></span>
+
                                 </p>
+
                                 <div class="mt-auto d-flex flex-column">
                                     <button class="btn btn-link text-white p-0 ms-auto toggle-button">Show more</button>
                                     <div class="mt-2">
@@ -376,14 +407,18 @@
                                         </a>
                                     </div>
                                 </div>
+
                             </div>
+
                         </div>
                     </div>
 
                     <!-- Donkey Kong -->
                     <div class="col-md-6">
                         <div class="card bg-dark text-white">
+
                             <div id="carouselDonkeyKong1" class="carousel slide">
+
                                 <div class="carousel-inner fixed-height">
                                     <div class="carousel-item active">
                                         <img src="media/img/donkey-kong.png" class="d-block w-100" alt="Donkey Kong">
@@ -391,8 +426,8 @@
                                     <div class="carousel-item">
                                         <img src="media/img/donkey-kong-2.png" class="d-block w-100" alt="Donkey Kong">
                                     </div>
-                                    <!-- Añade más imágenes aquí si es necesario -->
                                 </div>
+
                                 <button class="carousel-control-prev" type="button"
                                     data-bs-target="#carouselDonkeyKong1" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -403,17 +438,20 @@
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
+
                             </div>
+
                             <div class="card-body d-flex flex-column">
+
                                 <h5 class="card-title">D-Kong Scene <i class="fa fa-brands fa-unity px-2"></i></h5>
+
                                 <p class="card-text short-text">
-                                    This scene was part of a School Project for a Videogame Development Subject during
-                                    my studies in
-                                    <span class="fw-bold"><a href="https://aulacampus.com" target="_blank">Aula
-                                            Campus</a></span>,
-                                    where I am currently a student. The full project was a short video developed with
-                                    Unity Engine and C#.
+                                    This scene was part of a School Project for a Videogame Development Subject during my studies in 
+                                    <span class="fw-bold"><a href="https://aulacampus.com" target="_blank">Aula Campus
+                                    </a></span>, where I am currently a student. The full project was a short video 
+                                    developed with Unity Engine and C#.
                                 </p>
+
                                 <div class="mt-auto d-flex flex-column">
                                     <button class="btn btn-link text-white p-0 ms-auto toggle-button">Show more</button>
                                     <div class="mt-2">
@@ -427,23 +465,28 @@
                                         </a>
                                     </div>
                                 </div>
+
                             </div>
+
                         </div>
                     </div>
 
                     <!-- Donkey Kong -->
                     <div class="col-md-6">
                         <div class="card bg-dark text-white">
+
                             <div id="carouselDonkeyKong2" class="carousel slide">
                                 <div class="carousel-inner fixed-height">
+
                                     <div class="carousel-item active">
                                         <img src="media/img/donkey-kong.png" class="d-block w-100" alt="Donkey Kong">
                                     </div>
                                     <div class="carousel-item">
                                         <img src="media/img/donkey-kong-2.png" class="d-block w-100" alt="Donkey Kong">
                                     </div>
-                                    <!-- Añade más imágenes aquí si es necesario -->
+
                                 </div>
+
                                 <button class="carousel-control-prev" type="button"
                                     data-bs-target="#carouselDonkeyKong2" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -454,17 +497,19 @@
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
+
                             </div>
                             <div class="card-body d-flex flex-column">
+
                                 <h5 class="card-title">D-Kong Scene <i class="fa fa-brands fa-unity px-2"></i></h5>
-                                <p class="card-text short-text">
-                                    This scene was part of a School Project for a Videogame Development Subject during
-                                    my studies in
-                                    <span class="fw-bold"><a href="https://aulacampus.com" target="_blank">Aula
-                                            Campus</a></span>,
-                                    where I am currently a student. The full project was a short video developed with
-                                    Unity Engine and C#.
+
+                                 <p class="card-text short-text">
+                                    This scene was part of a School Project for a Videogame Development Subject during my studies in 
+                                    <span class="fw-bold"><a href="https://aulacampus.com" target="_blank">Aula Campus
+                                    </a></span>, where I am currently a student. The full project was a short video 
+                                    developed with Unity Engine and C#.
                                 </p>
+
                                 <div class="mt-auto d-flex flex-column">
                                     <button class="btn btn-link text-white p-0 ms-auto toggle-button">Show more</button>
                                     <div class="mt-2">
@@ -478,93 +523,68 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div>                          
+
                         </div>
+
                     </div>
                 </div>
-
-                <!-- Script para que se encoja la tarjeta -->
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        const toggleButtons = document.querySelectorAll(".toggle-button");
-                        toggleButtons.forEach(button => {
-                            button.addEventListener("click", function () {
-                                const cardText = this.parentNode.previousElementSibling;
-                                if (cardText.classList.contains("short-text")) {
-                                    cardText.classList.remove("short-text");
-                                    this.textContent = "Show less";
-                                } else {
-                                    cardText.classList.add("short-text");
-                                    this.textContent = "Show more";
-                                }
-                            });
-                        });
-                    });
-                </script>
 
             </article>
 
             <!-- Contact -->
             <article id="contact" class="col-12 col-lg-10 mb-5 mt-5">
+
                 <h2 class="fs-2 pb-3 fw-bold">Contact <span class="fs-5 fw-light">~$: finger</span></h2>
 
                 <p class="fs-4 fw-lighter text-justify">
                     I am always open for <b>new challenges.</b>
                 </p>
+
                 <p class="fs-5 fw-lighter text-justify">
                     Send me a message to keep in touch and create <b>cool stuff</b> together.
                 </p>
 
                 <div class="mt-4">
+
                     <form id="contact-form">
+
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="name" class="form-label">Name *</label>
                                 <input type="text" name="from_name" class="form-control" id="name" placeholder="Your cool name" required>
                             </div>
+
                             <div class="col-md-6 mb-3">
                                 <label for="email" class="form-label">Email *</label>
                                 <input type="email" name="email" class="form-control" id="email" placeholder="hi@email.com" required>
                             </div>
                         </div>
+
                         <div class="mb-3">
                             <label for="message" class="form-label">Message *</label>
                             <textarea name="message" class="form-control" id="message" placeholder="Type your message here..." rows="5" required></textarea>
                         </div>
+
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <button type="submit" class="btn btn-dark">Send Message</button>
                         </div>
+
                         <div id="thank-you-message" class="alert alert-success mt-3 d-none" role="alert">
                             Thank you for your message. I'll get back to you soon.
                         </div>
+
                     </form>
+
                 </div>
 
                 <p class="fs-6 mt-4 fw-lighter text-justify">
-                    Note that you can also contact me via <span class="fw-bold ps-1"><a
-                            href="https://www.linkedin.com/in/angelilaialcaniz"><i class="fa-brands fa-linkedin"></i>
-                            LinkedIn</a></span>.
+                    Note that you can also contact me via <span class="fw-bold ps-1">
+                    <a href="https://www.linkedin.com/in/angelilaialcaniz">
+                    <i class="fa-brands fa-linkedin"></i>LinkedIn</a></span>.
                 </p>
 
                 <p class="fs-5 fw-lighter text-justify">Thanks for visiting my website.</p>
-
-                <script>
-                    document.getElementById('contact-form').addEventListener('submit', function(event) {
-                        event.preventDefault(); // Evita que el formulario se envíe de manera predeterminada
-                
-                        // Envía el formulario
-                        emailjs.sendForm('service_33f3xcg', 'template_6s9u91i', this)
-                            .then(function(response) {
-                                console.log('¡Correo enviado!', response);
-                                // Limpia el formulario
-                                document.getElementById('contact-form').reset();
-                                // Muestra el mensaje de agradecimiento
-                                document.getElementById('thank-you-message').classList.remove('d-none');
-                            }, function(error) {
-                                console.log('Error al enviar el correo:', error);
-                            });
-                    });
-                </script>
 
             </article>
 
@@ -572,19 +592,20 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer class="py-4 text-center">
         <p>&copy; 2024 softdevilan. All rights reserved.</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function () {
-            emailjs.init("O6l5VhxHQNthXd9J-");
-        })();
-    </script>
+    
+    <script src="js/scripts.js"></script>
 
 </body>
 
