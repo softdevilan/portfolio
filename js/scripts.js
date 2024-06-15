@@ -1,19 +1,10 @@
 // Script para el header móvil
 function toggleMobileMenu() {
-
     var menu = document.getElementById('mobileMenu');
-
-    if (menu.classList.contains('d-none')) {
-
-        menu.classList.remove('d-none');
-
-    } else {
-
-        menu.classList.add('d-none');
-        
-    }
-
+    menu.classList.toggle('active'); // Alternar la clase 'active' para mostrar/ocultar el menú
 }
+
+
 
 // Script efecto escribir
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -44,19 +35,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Script para que se encoja la tarjeta 
 document.addEventListener("DOMContentLoaded", function () {
-    const toggleButtons = document.querySelectorAll(".toggle-button");
+
+    const toggleButtons = document.querySelectorAll(".toggle-button"); 
 
     toggleButtons.forEach(button => {
+
         button.addEventListener("click", function () {
+
             const cardText = this.parentNode.previousElementSibling;
             const col = this.closest(".col-md-6");
             const row = col.closest(".row");
-
-            const carouselItems = col.querySelectorAll(".carousel-item");
             const activeItem = col.querySelector(".carousel-item.active");
             const imageHeight = activeItem.querySelector("img").clientHeight;
 
             if (cardText.classList.contains("short-text")) {
+
                 // Expandir la tarjeta actual
                 cardText.classList.remove("short-text");
                 col.classList.add("expanded");
@@ -67,22 +60,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Ocultar la tarjeta vecina en la misma fila (solo para escritorio)
                 if (window.innerWidth >= 992) {
-                    const siblingIndex = Array.from(row.children).indexOf(col) % 2 === 0 ? Array.from(row.children).indexOf(col) + 1 : Array.from(row.children).indexOf(col) - 1;
+
+                    const siblingIndex = (Array.from(row.children).indexOf(col) % 2 === 0) ? (Array.from(row.children).indexOf(col) + 1) : (Array.from(row.children).indexOf(col) - 1);              
                     const neighborCol = row.children[siblingIndex];
+
                     if (neighborCol) {
                         neighborCol.classList.add("d-none");
                     }
                 }
 
             } else {
+
                 // Contraer la tarjeta actual
                 cardText.classList.add("short-text");
                 col.classList.remove("expanded");
                 this.textContent = "Show more";
 
                 // Restaurar altura de la tarjeta contraída
-                col.querySelector(".fixed-height").style.height = "300px"; // Ajusta aquí la altura original deseada
-
+                col.querySelector(".fixed-height").style.height = "300px";
+                
                 // Mostrar la tarjeta vecina en la misma fila después de que termine la transición (solo para escritorio)
                 if (window.innerWidth >= 992) {
                     col.addEventListener('transitionend', function () {
@@ -93,9 +89,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     }, { once: true });
                 }
+
             }
+
         });
+
     });
+
 });
 
 // Inicialización de EmailJS

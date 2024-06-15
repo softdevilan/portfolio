@@ -181,3 +181,18 @@ button {
         height: fit-content !important; 
     }
 }
+
+/* Estilo inicial y transición del menú móvil */
+#mobileMenu {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px); /* Desplazamiento inicial */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilo cuando el menú está visible */
+#mobileMenu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
