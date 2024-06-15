@@ -45,17 +45,58 @@ button {
 
 #skills button:hover { cursor: help; transform: translateY(-2.5px);}
 
-.card { transition: all 0.2s ease-in-out; }
+/* tarjetas */
+.card {
+    transition: all 0.2s ease-in-out;
+}
 
-.card:hover { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15)); }
+.card:hover {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15));
+}
 
 .fixed-height {
-    height: 300px; 
     overflow: hidden;
+    height: 300px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.col-md-6.expanded {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.card-body {
+    flex: 1; /* Asegura que el cuerpo de la tarjeta ocupe todo el espacio disponible */
+    display: flex;
+    flex-direction: column; /* Alinea los elementos internos verticalmente */
+}
+
+.card-body .carousel-inner {
+    flex: 1; /* Hace que el carrusel ocupe todo el espacio disponible verticalmente */
+}
+
+.carousel-item img {
+
+    width: 100%; /* Ajuste automático de ancho */
+    object-fit: cover; /* Ajuste de tamaño de la imagen */
+}
+
+.d-none {
+    display: none;
 }
 
 .fixed-height .carousel-item img {
-    height: 100%;
+    height: 500px;
     object-fit: cover;
 }
 
@@ -84,4 +125,59 @@ button {
     font-size: 9vh !important;
 }
 
+/* Estilos para escritorio (col-md-6) */
+@media (min-width: 992px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        transition: all 0.3s ease-in-out;
+    }
 
+    .col-md-6.expanded {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .col-md-6.expanded .fixed-height {
+        height: auto; /* Ajuste automático de altura */
+    }
+
+    .col-md-6.expanded .carousel-item img {
+        height: auto; /* Ajuste automático de altura */
+    }
+
+    .col-md-6.d-none {
+        display: none !important; /* Ocultar tarjeta vecina */
+    }
+}
+
+/* Estilos para dispositivos móviles (col-12) */
+@media (max-width: 991px) {
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .col-md-6 .fixed-height {
+        height: 300px; /* Altura fija para dispositivos móviles */
+        transition: height 0.3s ease-in-out; /* Agregar transición para suavizar el ajuste de altura */
+    }
+
+    .col-md-6.expanded .fixed-height {
+        height: auto; /* Ajuste automático de altura al expandirse */
+    }
+
+    .col-md-6 .carousel-item img {
+        height: auto; /* Ajuste automático de altura */
+        max-height: 300px; /* Altura máxima deseada para dispositivos móviles */
+    }
+
+    .col-md-6 .d-none {
+        display: none; /* Asegurar que la tarjeta vecina no se oculte en dispositivos móviles */
+    }
+
+    .carousel-inner{
+        height: fit-content !important; 
+    }
+}

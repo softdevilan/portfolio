@@ -44,24 +44,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Script para que se encoja la tarjeta 
 document.addEventListener("DOMContentLoaded", function () {
-
     const toggleButtons = document.querySelectorAll(".toggle-button");
 
     toggleButtons.forEach(button => {
-
         button.addEventListener("click", function () {
             const cardText = this.parentNode.previousElementSibling;
+            const col = this.closest(".col-md-6");
+            const row = col.closest(".row");
+
+            const carouselItems = col.querySelectorAll(".carousel-item");
+            const activeItem = col.querySelector(".carousel-item.active");
+            const imageHeight = activeItem.querySelector("img").clientHeight;
+
             if (cardText.classList.contains("short-text")) {
+                // Expandir la tarjeta actual
                 cardText.classList.remove("short-text");
+                col.classList.add("expanded");
                 this.textContent = "Show less";
+
+                // Ajustar altura de la tarjeta expandida
+                col.querySelector(".fixed-height").style.height = imageHeight + "px";
+
+                // Ocultar la tarjeta vecina en la misma fila (solo para escritorio)
+                if (window.innerWidth >= 992) {
+                    const siblingIndex = Array.from(row.children).indexOf(col) % 2 === 0 ? Array.from(row.children).indexOf(col) + 1 : Array.from(row.children).indexOf(col) - 1;
+                    const neighborCol = row.children[siblingIndex];
+                    if (neighborCol) {
+                        neighborCol.classList.add("d-none");
+                    }
+                }
+
             } else {
+                // Contraer la tarjeta actual
                 cardText.classList.add("short-text");
+                col.classList.remove("expanded");
                 this.textContent = "Show more";
+
+                // Restaurar altura de la tarjeta contraída
+                col.querySelector(".fixed-height").style.height = "300px"; // Ajusta aquí la altura original deseada
+
+                // Mostrar la tarjeta vecina en la misma fila después de que termine la transición (solo para escritorio)
+                if (window.innerWidth >= 992) {
+                    col.addEventListener('transitionend', function () {
+                        const siblingIndex = Array.from(row.children).indexOf(col) % 2 === 0 ? Array.from(row.children).indexOf(col) + 1 : Array.from(row.children).indexOf(col) - 1;
+                        const neighborCol = row.children[siblingIndex];
+                        if (neighborCol) {
+                            neighborCol.classList.remove("d-none");
+                        }
+                    }, { once: true });
+                }
             }
         });
-
     });
-
 });
 
 // Inicialización de EmailJS
